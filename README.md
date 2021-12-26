@@ -11,7 +11,7 @@
 * DBMS - Oracle Database 11g
 * TOOLS - JDK 1.8
 * SERVER - Apache Tomcat v9.0
-* LANGUAGE - Java|HTML|CSS|Javascript|SQL|JSP|JQuery
+* LANGUAGE - Java / HTML / CSS / Javascript / JSP /JQuery
 
 
 
