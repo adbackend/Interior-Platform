@@ -9,8 +9,11 @@
 ### 개발환경
 * OS - Microsoft Windows 10
 * DBMS - Oracle Database 11g
-* TOOLS - Spring Framework
+* TOOLS - JDK 1.8
 * SERVER - Apache Tomcat v9.0
+* LANGUAGE - Java|HTML|CSS|Javascript|SQL|JSP|JQuery
+
+
 
 
 ![image](https://user-images.githubusercontent.com/94349690/147401592-f5c00fa9-dfc6-4131-b466-60b05d88065b.png)
