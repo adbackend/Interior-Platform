@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.qna.dao.QnaMapper">  
+
+  	<select id="selectAllQna" parameterType="map" resultType="QnaVO">
+  	SELECT
+		  *
+		FROM (SELECT 
+		        a.*,
+		        rownum rnum
+		      FROM (SELECT LEVEL, BOARD_NO,GRPNO,BOARD_TITLE,BOARD_CONTENT,member.MEM_NUM,member.mem_id,BOARD_KIND,BOARD_PARENT,BOARD_DATE, qna.p_no, product.p_name
+		FROM member, qna left join product on qna.p_no = product.p_no
+		<where>
+			board_kind = ${board_kind} and qna.mem_num=member.mem_num 
+			<if test="keyword2 != '' and keyfield == 'mem_id'">
+		       and member.mem_id LIKE '%' || #{keyword2} || '%'
+		    </if>
+		    <if test="keyword2 != '' and keyfield == 'board_content'">
+		       and board_content LIKE '%' || #{keyword2} || '%'
+		    </if>
+		</where>
+		START WITH BOARD_PARENT = 0 
+		CONNECT BY PRIOR BOARD_NO = BOARD_PARENT ORDER SIBLINGS BY GRPNO desc)a)
+		<![CDATA[
+		WHERE rnum >= #{start} AND rnum <= #{end}  
+		]]> 
+  	</select>
+  	
+  	<select id="selectRowQnaCount" parameterType="map" resultType="integer">
+	SELECT count(*)
+		FROM QNA, member 
+		<where>
+			board_kind = ${board_kind} and qna.mem_num=member.mem_num 
+			<if test="keyword != '' and keyfield == 'mem_id'">
+		       and member.mem_id LIKE '%' || #{keyword2} || '%'
+		    </if>
+		    <if test="keyword != '' and keyfield == 'board_content'">
+		       and board_content LIKE '%' || #{keyword2} || '%'
+		    </if>
+		</where>
+  	</select>
+ 
+  	<select id="selectAllProductQna" parameterType="map" resultType="QnaVO">
+  		SELECT
+		  *
+		FROM (SELECT 
+		        a.*,
+		         rownum rnum
+		      FROM (
+SELECT LEVEL, BOARD_NO,GRPNO,BOARD_TITLE,BOARD_CONTENT,member.MEM_NUM,member.mem_id,BOARD_KIND,BOARD_PARENT,BOARD_DATE,qna.p_no
+		FROM QNA, member, product
+		where board_kind = 0 and qna.mem_num=member.mem_num and qna.p_no=product.p_no and qna.p_no=#{p_no}
+		START WITH BOARD_PARENT = 0 
+		CONNECT BY PRIOR BOARD_NO = BOARD_PARENT ORDER SIBLINGS BY GRPNO desc)a) 
+		<![CDATA[
+		WHERE rnum >= #{start} AND rnum <= #{end}  
+		]]> 
+  	</select>
+  	
+  	<select id="selectAllPrpductQnaCount" parameterType="map" resultType="integer">
+  		select count(*) from qna, member, product
+		where board_kind = 0 and qna.mem_num=member.mem_num and qna.p_no=product.p_no and qna.p_no=#{p_no}
+  	</select>
+</mapper>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="shopProductList" extends="shopMain">
+    	<put-attribute name="title" value="상품페이지"/>
+    	<put-attribute name="body" value="/WEB-INF/views/shop/productList.jsp"/>
+    </definition>
+    <definition name="shopProductSearchList" extends="shopMain">
+    	<put-attribute name="title" value="상품페이지"/>
+    	<put-attribute name="body" value="/WEB-INF/views/shop/productSearchList.jsp"/>
+    </definition>
+     <definition name="shopProductDetail" extends="shopMain">
+    	<put-attribute name="title" value="상품상세페이지"/>
+    	<put-attribute name="body" value="/WEB-INF/views/shop/productDetail.jsp"/> 
+    </definition>
+      <definition name="cart" extends="shopMain">
+    	<put-attribute name="title" value="장바구니페이지"/>
+    	<put-attribute name="body" value="/WEB-INF/views/shop/cart.jsp"/> 
+    </definition>
+    <definition name="shopOrder" extends="shopMain">
+    	<put-attribute name="title" value="주문페이지"/>
+    	<put-attribute name="body" value="/WEB-INF/views/shop/order.jsp"/> 
+    </definition>
+    
+     <definition name="orderNow" extends="shopMain">
+    	<put-attribute name="title" value="주문페이지"/>
+    	<put-attribute name="body" value="/WEB-INF/views/shop/buyNow.jsp"/> 
+    </definition>
+    
+     <definition name="orderList" extends="shopMain">
+    	<put-attribute name="title" value="주문내역페이지"/>
+    	<put-attribute name="body" value="/WEB-INF/views/shop/orderList.jsp"/> 
+    </definition>
+    <definition name="orderCancel" extends="shopMain">
+    	<put-attribute name="title" value="주문취소페이지"/>
+    	<put-attribute name="body" value="/WEB-INF/views/shop/orderCancel.jsp"/> 
+    </definition>
+    <definition name="orderExchange" extends="shopMain">
+    	<put-attribute name="title" value="주문교환페이지"/>
+    	<put-attribute name="body" value="/WEB-INF/views/shop/orderExchange.jsp"/> 
+    </definition>
+     <definition name="refundExchange" extends="shopMain">
+    	<put-attribute name="title" value="주문반품페이지"/>
+    	<put-attribute name="body" value="/WEB-INF/views/shop/orderRefund.jsp"/> 
+    </definition>
+     <definition name="orderConfirm" extends="shopMain">
+    	<put-attribute name="title" value="구매확정페이지"/>
+    	<put-attribute name="body" value="/WEB-INF/views/shop/orderConfirm.jsp"/> 
+    </definition>
+     <definition name="orderDetail" extends="shopMain">
+    	<put-attribute name="title" value="주문내역상세페이지"/>
+    	<put-attribute name="body" value="/WEB-INF/views/shop/orderDetail.jsp"/> 
+    </definition>
+     <definition name="orderResult" extends="shopMain">
+    	<put-attribute name="title" value="주문완료"/>
+    	<put-attribute name="body" value="/WEB-INF/views/shop/orderResult.jsp"/> 
+    </definition>
+</tiles-definitions>
+
+
+

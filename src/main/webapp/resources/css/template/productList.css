@@ -1,0 +1,192 @@
+@charset "UTF-8";
+#categorySide{
+	margin-top:30px;
+	float:left;
+  width: 150px;
+  height: 100%;
+}
+
+#showmenu{
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.menu{
+	display: none;
+}
+
+#showmenu:hover{
+  color: gray;
+  font-weight: bold;
+}
+
+.menu ul{
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.menu ul li{
+    text-align: left;
+  list-style: none;
+  margin: 8px;
+}
+
+.menu ul li a{
+  text-decoration: none;
+  color: black;
+}
+
+.menu ul li a:hover{
+  color: gray;
+}
+
+.top_menu_info{
+	width:100%; 
+	height:35px; 
+	background: #f4f4f5;
+	border-bottom: 1px solid #ebebeb;
+	border-top:1px solid #ebebeb;
+}
+
+.top_menu_info > div {
+	width:1200px; 
+	line-height: 35px;  
+	margin:0 auto; 
+	font-size: 13px;
+}
+
+.list-container{
+	display: flex;
+	justify-content: space-between;
+	flex-flow:wrap;
+	align-items:flex-start; 
+	cursor: pointer;
+	background: white;
+}
+
+.list-container-empty{
+	display: flex;
+	justify-content: space-between;
+	flex-flow:wrap;
+	align-items:flex-start; 
+
+}
+
+
+.top-small-menu{
+	float:right;
+	width:1020px;
+	height:100%;
+}
+
+.top-small-menu-title{
+	border-bottom: 1px solid #ebebeb; 
+	height:50px; 
+	line-height:50px; 
+	font-size:15px; 
+	font-weight: bold;
+}
+
+.menu-amount{
+	border-bottom:1px solid #cfcfd0; 
+	height:40px; 
+	line-height:40px; 
+	font-size: 13px;
+}
+
+.list-content{
+	width: 230px;
+	height:350px;
+	background: white;
+}
+
+.image-ani{
+	width: 230px;
+	 overflow: hidden;
+}
+
+.image-ani img{
+	-webkit-transform:scale(1);
+    -moz-transform:scale(1);
+    -ms-transform:scale(1); 
+    -o-transform:scale(1);  
+    transform:scale(1);
+    -webkit-transition:.3s;
+    -moz-transition:.3s;
+    -ms-transition:.3s;
+    -o-transition:.3s;
+    transition:.3s;
+    border-radius: 4px;
+}
+
+.image-ani:hover img {
+	 -webkit-transform:scale(1.1);
+    -moz-transform:scale(1.1);
+    -ms-transform:scale(1.1);   
+    -o-transform:scale(1.1);
+    transform:scale(1.1);
+}
+
+.list-name{
+	font-size:15px;
+}
+
+.list-sale{
+	font-weight: bold; 
+	font-size: 17px;
+	color:#35c5f0; 
+	float: left;
+}
+
+
+.list-price{
+	font-weight: bold; 
+	font-size: 17px;
+}
+
+.list-rating {
+	clear: both;
+}
+
+.list-star{
+	vertical-align: middle;
+}
+
+.list-rating-num{
+	display: inline-block; 
+	font-size: 13px; 
+	font-weight: bold;
+}
+
+.list-review{
+	display: inline-block; 
+	font-size: 13px; 
+	font-weight: bold; 
+	color:gray;
+}
+
+.special-price-div{
+	background: #ff7777; 
+	border-radius: 5px; 
+	color:white; 
+	height:20px; 
+	width:30px; 
+	align-content: center;
+}
+
+.soldout-div{
+	background: #d1d1d1; 
+	border-radius: 5px; 
+	color:white; 
+	height:20px; 
+	width:30px; 
+	align-content: center;
+}
+
+.special-price-text{
+	font-size: 11.5px; 
+	color:white; 
+	text-align: center;
+}

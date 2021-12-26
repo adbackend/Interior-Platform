@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/*footer 스타일*/
+footer {
+	width:100%;
+	height:240px;
+	background: #4d4d4d;
+	margin: 0 auto;
+	clear: both;
+	margin-top: 100px;
+	
+}
+
+.footer-div{
+	padding-top:40px;
+	margin-left:-270px;
+	text-align: center;
+	background: #4d4d4d;
+	height: 240px;
+}
+
+.footer-div-content{
+	color:white;
+	text-align:left;
+	display:inline-block;
+	margin-right: 130px;
+	height: 170px;
+}
+
+.footer-div-content .longhr{
+	width:330px;
+	background:white;
+	  margin-top: 0;
+   margin-bottom: 20px;
+}
+
+.footer-div-content .shorthr{
+	width:190px;
+	background:white;
+	margin-top: 0;
+   	margin-bottom: 20px;
+}
+
+.footer-div-content span{
+	color:white;
+	font-size: 17px;
+	font-weight: 600;
+}

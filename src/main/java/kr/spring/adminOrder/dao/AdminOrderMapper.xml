@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.adminOrder.dao.AdminOrderMapper">
+	<!-- 주문 데이터 개수 -->
+	<select id="getOrderCount" parameterType="map" resultType="integer">
+		SELECT
+  		  COUNT(*)
+  		FROM sorder o JOIN member m ON o.mem_num=m.mem_num
+     		 LEFT OUTER JOIN delivery d ON o.order_no=d.order_no
+    		 LEFT OUTER JOIN delivery_status s ON d.d_status_num=s.d_status_num
+			 <where>
+			 	<if test="d_status_num != ''">
+			 		d.d_status_num=#{d_status_num}
+			 		<if test="d_status_num == 5"><!-- 반품 -->
+			 			OR d.d_status_num=8
+			 		</if>
+			 		<if test="d_status_num == 6"><!-- 교환 -->
+			 			OR d.d_status_num=9
+			 		</if>
+			 	</if>
+			 	<if test="d_status_num != '' and keyword != ''">
+			 		AND
+			 	</if>
+			 	<if test="keyword != '' and keyfield == 'order_no'">
+			 		o.order_no LIKE '%' || #{keyword} || '%'
+			 	</if>
+			 	<if test="keyword != '' and keyfield == 'mem_id'">
+			 		m.mem_id LIKE '%' || #{keyword} || '%'
+			 	</if>
+			 	<if test="start_date != '' and end_date != null and (d_status_num != '' or keyword != '')">
+			 		AND
+			 	</if>
+			 	<if test="start_date != '' and end_date != null">
+			 		o.order_date BETWEEN TO_DATE(#{start_date}, 'YYYY-MM-DD') AND TO_DATE(#{end_date}, 'YYYY-MM-DD') + 1
+			 	</if>
+			 </where>
+	</select>
+	
+	<!-- 주문 목록 -->
+	<select id="getOrderList" parameterType="map" resultType="adminOrderVO">
+		SELECT
+			*
+		FROM (SELECT a.*, rownum rnum
+			  FROM (SELECT
+			  		  *
+			  		FROM sorder o JOIN member m ON o.mem_num=m.mem_num
+			     		 LEFT OUTER JOIN delivery d ON o.order_no=d.order_no
+			    		 LEFT OUTER JOIN delivery_status s ON d.d_status_num=s.d_status_num
+					<where>
+						<if test="d_status_num != ''">
+					 		d.d_status_num=#{d_status_num}
+					 		<if test="d_status_num == 5"><!-- 반품 -->
+					 			OR d.d_status_num=8
+					 		</if>
+					 		<if test="d_status_num == 6"><!-- 교환 -->
+					 			OR d.d_status_num=9
+					 		</if>
+			 			</if>
+					 	<if test="d_status_num != '' and keyword != ''">
+					 		AND
+					 	</if>
+					 	<if test="keyword != '' and keyfield == 'order_no'">
+					 		o.order_no LIKE '%' || #{keyword} || '%'
+					 	</if>
+					 	<if test="keyword != '' and keyfield == 'mem_id'">
+					 		m.mem_id LIKE '%' || #{keyword} || '%'
+					 	</if>
+					 	<if test="start_date != '' and end_date != null and (d_status_num != '' or keyword != '')">
+					 		AND
+					 	</if>
+					 	<if test="start_date != '' and end_date != null">
+							o.order_date BETWEEN TO_DATE(#{start_date}, 'YYYY-MM-DD') AND TO_DATE(#{end_date}, 'YYYY-MM-DD') + 1
+					 	</if>
+					</where>
+			  		ORDER BY 
+				  		<if test="orderby == '' or orderby == 'date'">
+				  			o.order_date DESC
+				  		</if>
+				  		<if test="orderby == 'status'">
+				  			d.d_status_num
+				  		</if>
+				  		<if test="orderby == 'pay'">
+				  			o.order_pay DESC
+				  		</if>
+			  		)a)
+		<![CDATA[
+		WHERE rnum >= #{start} AND rnum <= #{end}
+		]]>
+	</select>
+	
+	<!-- 주문 상세 -->
+	<select id="selectOrder" parameterType="string" resultType="adminOrderVO">
+		SELECT
+  			*
+  		FROM sorder o JOIN member m ON o.mem_num=m.mem_num
+		     LEFT OUTER JOIN delivery d ON o.order_no=d.order_no
+		     LEFT OUTER JOIN delivery_status s ON d.d_status_num=s.d_status_num
+		WHERE o.order_no=#{order_no}
+	</select>
+</mapper>
+
+
+
+
+
+
+

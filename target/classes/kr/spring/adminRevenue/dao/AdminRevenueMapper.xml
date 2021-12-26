@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.spring.adminRevenue.dao.AdminRevenueMapper">
+
+	<select id="selectList"
+		resultType="kr.spring.adminRevenue.vo.RevenueVO">
+
+	SELECT SUM(s.order_pay) 총가격,
+       SUM(sd.order_d_amount) 수량,
+       p.p_name 상품명
+    FROM sorder s --주문상세  sorder_detail sd
+        LEFT OUTER JOIN  sorder_detail sd --주문
+            ON sd.order_no = s.order_no
+        LEFT OUTER JOIN product p --상품
+            ON sd.p_no = p.p_no
+        LEFT OUTER JOIN category_top ct
+            ON p.c_top_no = ct.c_top_no
+            GROUP BY p.p_name ORDER BY SUM(s.order_pay) DESC;
+	</select>
+	
+<!-- 	<select id="getGoodsRevenue" parameterType="java.lang.String" resultType="java.util.HashMap"> -->
+<!-- 		SELECT  -->
+<!-- 		    RANK() OVER(ORDER BY TOTAL_ORDER_PRICE DESC) AS RANK,  -->
+<!-- 		    A.*  -->
+<!-- 		FROM  -->
+<!-- 		( -->
+<!-- 			SELECT -->
+<!-- 			    C.C_TOP_NAME AS CATEGORY_NAME, -->
+<!-- 			    B.P_NO AS PRODUCT_CODE, -->
+<!-- 			    B.P_NAME AS PRODUCT_NAME, -->
+<!-- 			    B.P_PRICE AS PRODUCT_PRICE, -->
+<!-- 			    COUNT(B.P_NO) AS TOTAL_ORDER_COUNT, -->
+<!-- 			    SUM(A.ORDER_D_PRICE * A.ORDER_D_AMOUNT) AS TOTAL_ORDER_PRICE -->
+<!-- 			FROM SORDER E -->
+<!-- 			INNER JOIN SORDER_DETAIL A ON E.ORDER_NO = A.ORDER_NO -->
+<!-- 			INNER JOIN PRODUCT B ON A.P_NO = B.P_NO -->
+<!-- 			INNER JOIN CATEGORY_TOP C ON B.C_TOP_NO = C.C_TOP_NO -->
+<!-- 			INNER JOIN CATEGORY_SUB D ON C.C_TOP_NO = D.C_TOP_NO AND B.C_SUB_NO = D.C_SUB_NO -->
+<!-- 			WHERE E.ORDER_DATE BETWEEN TO_DATE(#{startDate}, 'YYYY-MM-DD') AND TO_DATE(#{endDate}, 'YYYY-MM-DD') -->
+<!-- 			GROUP BY C.C_TOP_NAME, B.P_NO, B.P_NAME, B.P_PRICE -->
+<!-- 		) A -->
+<!-- 	</select> -->
+	
+	<!-- ########################################################################################################## -->
+	<!-- ########################################################################################################## -->
+	<!-- ########################################################################################################## -->
+	<!-- 2021.10.17(일) 오후1:14 수정 쿼리 -->
+	<select id="getGoodsRevenue" parameterType="java.lang.String" resultType="java.util.HashMap">
+		SELECT 
+		    RANK() OVER(ORDER BY TOTAL_ORDER_PRICE DESC) AS RANK, 
+		    A.* 
+		FROM 
+		(
+			SELECT
+			    C.C_TOP_NAME AS CATEGORY_NAME,
+			    B.P_NO AS PRODUCT_CODE,
+			    B.P_NAME AS PRODUCT_NAME,
+			    B.P_PRICE AS PRODUCT_PRICE,
+			    COUNT(B.P_NO) AS TOTAL_ORDER_COUNT,
+			    SUM(B.P_PRICE * A.ORDER_D_AMOUNT) AS TOTAL_ORDER_PRICE
+			FROM SORDER E
+			INNER JOIN SORDER_DETAIL A ON E.ORDER_NO = A.ORDER_NO
+			INNER JOIN PRODUCT B ON A.P_NO = B.P_NO
+			INNER JOIN CATEGORY_TOP C ON B.C_TOP_NO = C.C_TOP_NO
+			INNER JOIN CATEGORY_SUB D ON C.C_TOP_NO = D.C_TOP_NO AND B.C_SUB_NO = D.C_SUB_NO
+			WHERE E.ORDER_DATE BETWEEN TO_DATE(#{startDate}, 'YYYY-MM-DD') AND TO_DATE(#{endDate}, 'YYYY-MM-DD')
+			GROUP BY C.C_TOP_NAME, B.P_NO, B.P_NAME, B.P_PRICE
+		) A
+	</select>
+
+</mapper>
+
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.adminMember.dao.AdminMemberMapper"> 
+ 	<!-- 회원 데이터 개수 -->
+ 	<select id="getMemberCount" parameterType="map" resultType="integer">
+ 		SELECT
+ 		  COUNT(*)
+ 		FROM member m LEFT OUTER JOIN member_detail d ON m.mem_num=d.mem_num
+		WHERE m.mem_auth IN(0,1,2)
+		<if test="auth_num != ''">
+			AND m.mem_auth = #{auth_num}
+		</if>
+		<if test="keyword != '' and keyfield == 'mem_num'">
+			AND m.mem_num = #{keyword}
+		</if>
+		<if test="keyword != '' and keyfield == 'mem_id'">
+			AND m.mem_id LIKE '%' || #{keyword} || '%'
+		</if>
+		<if test="keyword != '' and keyfield == 'mem_phone'">
+			AND d.mem_phone LIKE '%' || #{keyword} || '%'
+		</if>
+ 	</select>
+ 	
+ 	<!-- 회원 목록 -->
+	<select id="getMemberList" parameterType="map" resultType="adminMemberVO">
+	SELECT
+	  *
+	FROM (SELECT 
+		    a.*, 
+		    rownum rnum 
+		  FROM (SELECT 
+				  * 
+				FROM member m LEFT OUTER JOIN member_detail d ON m.mem_num=d.mem_num
+				WHERE m.mem_auth IN(0,1,2)
+				<if test="auth_num != ''">
+					AND m.mem_auth = #{auth_num}
+				</if>
+				<if test="keyword != '' and keyfield == 'mem_num'">
+					AND m.mem_num = #{keyword}
+				</if>
+				<if test="keyword != '' and keyfield == 'mem_id'">
+					AND m.mem_id LIKE '%' || #{keyword} || '%'
+				</if>
+				<if test="keyword != '' and keyfield == 'mem_phone'">
+					AND d.mem_phone LIKE '%' || #{keyword} || '%'
+				</if>
+				ORDER BY m.mem_auth DESC, m.mem_num DESC)a)
+	<![CDATA[
+	WHERE rnum >= #{start} AND rnum <= #{end}
+	]]>
+	</select>
+</mapper>
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="adminList" extends="adminMain">
+    	<put-attribute name="title" value="관리자목록"/>
+    	<put-attribute name="body" value="/WEB-INF/views/admin/adminList.jsp"/>
+    	<put-attribute name="left" value="/WEB-INF/views/admin/left.jsp"/>
+    </definition>
+    <definition name="adminRegister" extends="adminMain">
+    	<put-attribute name="title" value="관리자등록"/>
+    	<put-attribute name="body" value="/WEB-INF/views/admin/adminRegister.jsp"/>
+    	<put-attribute name="left" value="/WEB-INF/views/admin/left.jsp"/>
+    </definition>
+    <definition name="adminUpdate" extends="adminMain">
+    	<put-attribute name="title" value="관리자수정"/>
+    	<put-attribute name="body" value="/WEB-INF/views/admin/adminUpdate.jsp"/>
+    	<put-attribute name="left" value="/WEB-INF/views/admin/left.jsp"/>
+    </definition>
+    <definition name="adminDelete" extends="adminMain">
+    	<put-attribute name="title" value="관리자삭제"/>
+    	<put-attribute name="body" value="/WEB-INF/views/admin/adminDelete.jsp"/>
+    	<put-attribute name="left" value="/WEB-INF/views/admin/left.jsp"/>
+    </definition>
+</tiles-definitions>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="category_top_list" extends="adminMain">
+    	<put-attribute name="title" value="상위 카테고리 목록"/>
+    	<put-attribute name="body" value="/WEB-INF/views/category_top/list.jsp"/>
+    	<put-attribute name="left" value="/WEB-INF/views/category_top/left.jsp"/>
+    </definition>
+    <definition name="category_top_update" extends="adminMain">
+    	<put-attribute name="title" value="상위 카테고리 수정"/>
+    	<put-attribute name="body" value="/WEB-INF/views/category_top/category_topUpdate.jsp"/>
+    	<put-attribute name="left" value="/WEB-INF/views/category_top/left.jsp"/>
+    </definition>
+    <definition name="category_top_delete" extends="adminMain">
+    	<put-attribute name="title" value="상위 카테고리 삭제"/>
+    	<put-attribute name="body" value="/WEB-INF/views/category_top/category_topDelete.jsp"/>
+    	<put-attribute name="left" value="/WEB-INF/views/category_top/left.jsp"/>
+    </definition>
+    <definition name="category_top_register" extends="adminMain">
+    	<put-attribute name="title" value="상위 카테고리 등록"/>
+    	<put-attribute name="body" value="/WEB-INF/views/category_top/category_topRegister.jsp"/>
+    	<put-attribute name="left" value="/WEB-INF/views/category_top/left.jsp"/>
+    </definition>
+    
+</tiles-definitions>

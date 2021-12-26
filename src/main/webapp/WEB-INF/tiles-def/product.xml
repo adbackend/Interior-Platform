@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="productList" extends="adminMain">
+    	<put-attribute name="title" value="상품 관리 목록"/>
+    	<put-attribute name="body" value="/WEB-INF/views/product/list.jsp"/>
+    	<put-attribute name="left" value="/WEB-INF/views/product/left.jsp"/>
+    </definition>
+    <definition name="productRegister" extends="adminMain">
+    	<put-attribute name="title" value="상품 등록"/>
+    	<put-attribute name="body" value="/WEB-INF/views/product/productRegister.jsp"/>
+    	<put-attribute name="left" value="/WEB-INF/views/product/left.jsp"/>
+    </definition>
+    <definition name="productDelete" extends="adminMain">
+    	<put-attribute name="title" value="상품 삭제"/>
+    	<put-attribute name="body" value="/WEB-INF/views/product/productDelete.jsp"/>
+    	<put-attribute name="left" value="/WEB-INF/views/product/left.jsp"/>
+    </definition>
+    <definition name="productUpdate" extends="adminMain">
+    	<put-attribute name="title" value="상품 수정"/>
+    	<put-attribute name="body" value="/WEB-INF/views/product/productUpdate.jsp"/>
+    	<put-attribute name="left" value="/WEB-INF/views/product/left.jsp"/>
+    </definition>
+
+</tiles-definitions>

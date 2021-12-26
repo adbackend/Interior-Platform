@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="reviewAvaliable" extends="shopMain">
+    	<put-attribute name="title" value="작성 가능한 후기"/>
+    	<put-attribute name="body" value="/WEB-INF/views/review/reviewAvaliable.jsp"/>
+    </definition>
+     <definition name="reviewWritten" extends="shopMain">
+    	<put-attribute name="title" value="이미 작성한 후기"/>
+    	<put-attribute name="body" value="/WEB-INF/views/review/reviewWritten.jsp"/>
+    </definition>
+    <definition name="reviewWrite" extends="shopMain">
+    	<put-attribute name="title" value="상품 후기 작성하기"/>
+    	<put-attribute name="body" value="/WEB-INF/views/review/reviewWrite.jsp"/>
+    </definition>
+</tiles-definitions>
+
+
+

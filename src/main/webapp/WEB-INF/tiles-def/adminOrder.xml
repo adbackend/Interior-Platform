@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="adminOrderList" extends="adminMain">
+    	<put-attribute name="title" value="주문목록"/>
+    	<put-attribute name="body" value="/WEB-INF/views/adminOrder/adminOrderList.jsp"/>
+    	<put-attribute name="left" value="/WEB-INF/views/adminOrder/left.jsp"/>
+    </definition>
+    <definition name="adminOrderDetail" extends="adminMain">
+    	<put-attribute name="title" value="주문상세"/>
+    	<put-attribute name="body" value="/WEB-INF/views/adminOrder/adminOrderDetail.jsp"/>
+    	<put-attribute name="left" value="/WEB-INF/views/adminOrder/left.jsp"/>
+    </definition>
+    <definition name="adminOrderCancel" extends="adminMain">
+    	<put-attribute name="title" value="주문취소"/>
+    	<put-attribute name="body" value="/WEB-INF/views/adminOrder/adminOrderCancel.jsp"/>
+    	<put-attribute name="left" value="/WEB-INF/views/adminOrder/left.jsp"/>
+    </definition>
+    <definition name="adminDeliveryList" extends="adminMain">
+    	<put-attribute name="title" value="배송관리"/>
+    	<put-attribute name="body" value="/WEB-INF/views/adminOrder/adminDeliveryList.jsp"/>
+    	<put-attribute name="left" value="/WEB-INF/views/adminOrder/left.jsp"/>
+    </definition>
+    <definition name="adminDeliveryTrack" extends="adminMain">
+    	<put-attribute name="title" value="송장등록"/>
+    	<put-attribute name="body" value="/WEB-INF/views/adminOrder/adminDeliveryTrack.jsp"/>
+    	<put-attribute name="left" value="/WEB-INF/views/adminOrder/left.jsp"/>
+    </definition>
+    <definition name="adminReturnList" extends="adminMain">
+    	<put-attribute name="title" value="반품/교환관리"/>
+    	<put-attribute name="body" value="/WEB-INF/views/adminOrder/adminReturnList.jsp"/>
+    	<put-attribute name="left" value="/WEB-INF/views/adminOrder/left.jsp"/>
+    </definition>
+</tiles-definitions>

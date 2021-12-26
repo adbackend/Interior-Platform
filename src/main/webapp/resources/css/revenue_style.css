@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+/* 가로 너비 */
+div#narrow-width{
+	width: 400px;
+}
+div#normal-width{
+	width: 700px;
+}
+div#wide_width table {
+	width: 97%;
+}
+
+
+/* 글자 */
+#header-3{
+	height: 80px;
+	display: table-cell;
+    vertical-align: middle;
+}
+#header-4{
+	height: 60px;
+	display: table-cell;
+    vertical-align: middle;
+}
+.blank-text{
+	color: rgb(192, 192, 192);
+}
+
+/* 테이블 */
+.table-bordered th{
+	background-color: #d6d8db;
+	border-color: #b3b7bb;
+}
+.table-bordered th{
+	text-align: center;
+}
+table.table{
+	margin-left: 10px;
+}
+table.cell-4 th{
+	width: 15%;
+}
+table.cell-4 td{
+	width: 35%;
+}
+table.cell-2 th{
+	width: 20%;
+}
+table.cell-2 td{
+	width: 80%;
+}
+
+
+/* input 가로 길이 */
+.table input[type="date"]{
+	width: 120px;
+}
+table input#mem_address1, table input#mem_address2 {
+	width: 300px;
+}
+table input#mem_id, table input#mem_passwd {
+	width: 180px;
+}
+table input#mem_name, table input#mem_phone, 
+table input#mem_email, table input#mem_zipcode, table select#mem_auth {
+	width: 150px;
+}
+
+
+/* 요소 정렬 */
+.element-center{
+	margin: 5px auto 30px;
+}
+
+/* 구분선 */
+hr.sub-line{
+	width: 97%;
+	color: gray;
+}
+
+
+

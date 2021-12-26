@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.product.dao.ProductMapper">  
+  	<update id="updateProduct" parameterType="productVO">
+		UPDATE product SET
+		    <if test="p_image_name != ''">
+		    p_image_name=#{p_image_name}, 
+		    p_image=#{p_image},
+		    </if>
+		    p_name=#{p_name}, 
+		    p_price=#{p_price}, 
+		    p_amount=#{p_amount}, 
+		    p_discount=#{p_discount}, 
+		    p_sub_text=#{p_sub_text}, 
+		    c_top_no=#{c_top_no},
+		    c_sub_no=#{c_sub_no} 
+		 WHERE p_no=#{p_no}
+	</update>
+	
+	<select id="selectSearchProduct"  parameterType="map" resultType="ProductVO">
+	Select * FROM product 
+		<where>
+			<if test="keyord != '' and keyfield == 'p_name'">
+				p_name LIKE '%' || #{keyword} || '%'
+			</if>
+		</where>
+	</select>
+	<select id="selectCountSearchProduct" parameterType="map" resultType="integer">
+		select count(*) from
+		product
+		<where>
+			<if test="keyord != '' and keyfield == 'p_name'">
+				p_name LIKE '%' || #{keyword} || '%'
+			</if>
+		</where>
+	</select>
+</mapper>

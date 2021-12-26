@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.delivery.dao.DeliveryMapper"> 
+	<!-- 배송 데이터 개수 -->
+	<select id="getDeliveryCount" parameterType="map" resultType="integer">
+		SELECT
+		  COUNT(*)
+		FROM delivery d JOIN sorder o ON d.order_no= o.order_no
+						JOIN member m ON o.mem_num=m.mem_num
+		<where>
+				d_status_num IN (0,1,2,3)
+		 	<if test="d_status_num != ''">
+		 		AND d_status_num=#{d_status_num}
+		 	</if>
+		 	<if test="keyword != '' and keyfield == 'order_no'">
+		 		AND d.order_no LIKE '%' || #{keyword} || '%'
+		 	</if>
+		 	<if test="keyword != '' and keyfield == 'mem_id'">
+		 		AND m.mem_id LIKE '%' || #{keyword} || '%'
+		 	</if>
+		 </where>
+	</select>
+	
+	<!-- 배송 목록 -->
+	<select id="getDeliveryList" parameterType="map" resultType="deliveryVO">
+		SELECT
+			*
+		FROM (SELECT a.*, rownum rnum
+			  FROM (SELECT
+			  		  *
+			  		FROM delivery d
+			  			 JOIN delivery_status s ON d.d_status_num=s.d_status_num
+			  			 JOIN sorder o ON d.order_no= o.order_no
+						 JOIN member m ON o.mem_num=m.mem_num
+					<where>
+						d.d_status_num IN (0,1,2,3)
+					 	<if test="d_status_num != ''">
+					 		AND d.d_status_num=#{d_status_num}
+					 	</if>
+					 	<if test="keyword != '' and keyfield == 'order_no'">
+					 		AND d.order_no LIKE '%' || #{keyword} || '%'
+					 	</if>
+					 	<if test="keyword != '' and keyfield == 'mem_id'">
+					 		AND m.mem_id LIKE '%' || #{keyword} || '%'
+					 	</if>
+				 	</where>
+			  		ORDER BY (CASE WHEN d.d_status_num != 3 THEN 1 ELSE 2 END), o.order_date DESC, d.d_status_num DESC)a)
+		<![CDATA[
+		WHERE rnum >= #{start} AND rnum <= #{end}
+		]]>	
+	</select>
+	
+	<!-- 배송 상세 -->
+	<select id="selectDelivery" parameterType="integer" resultType="deliveryVO">
+		SELECT
+  			*
+  		FROM delivery d
+			 JOIN delivery_status s ON d.d_status_num=s.d_status_num
+			 JOIN sorder o ON d.order_no= o.order_no
+			 JOIN member m ON o.mem_num=m.mem_num
+		WHERE delivery_no=#{delivery_no}
+	</select>
+	
+	<!-- 반품교환 데이터 개수 -->
+	<select id="getReturnCount" parameterType="map" resultType="integer">
+		SELECT
+		  COUNT(*)
+		FROM delivery d JOIN sorder o ON d.order_no= o.order_no
+						JOIN member m ON o.mem_num=m.mem_num
+		<where>
+			d.d_status_num IN (5,6,8,9)
+		 	<if test="d_status_num != ''">
+		 		AND d.d_status_num=#{d_status_num}
+		 		<if test="d_status_num == 5"><!-- 반품 -->
+		 			OR d.d_status_num=8
+		 		</if>
+		 		<if test="d_status_num == 6"><!-- 교환 -->
+		 			OR d.d_status_num=9
+		 		</if>
+		 	</if>
+		 	<if test="keyword != '' and keyfield == 'order_no'">
+		 		AND d.order_no LIKE '%' || #{keyword} || '%'
+		 	</if>
+		 	<if test="keyword != '' and keyfield == 'mem_id'">
+		 		AND m.mem_id LIKE '%' || #{keyword} || '%'
+		 	</if>
+		 </where>
+	</select>
+	
+	<!-- 반품교환 목록 -->
+	<select id="getReturnList" parameterType="map" resultType="deliveryVO">
+		SELECT
+			*
+		FROM (SELECT a.*, rownum rnum
+			  FROM (SELECT
+			  		  *
+			  		FROM delivery d
+			  			 JOIN delivery_status s ON d.d_status_num=s.d_status_num
+			  			 JOIN sorder o ON d.order_no= o.order_no
+						 JOIN member m ON o.mem_num=m.mem_num
+					<where>
+						d.d_status_num IN (5,6,8,9)
+					 	<if test="d_status_num != ''">
+					 		AND d.d_status_num=#{d_status_num}
+					 		<if test="d_status_num == 5"><!-- 반품 -->
+					 			OR d.d_status_num=8
+					 		</if>
+					 		<if test="d_status_num == 6"><!-- 교환 -->
+					 			OR d.d_status_num=9
+					 		</if>
+					 	</if>
+					 	<if test="keyword != '' and keyfield == 'order_no'">
+					 		AND d.order_no LIKE '%' || #{keyword} || '%'
+					 	</if>
+					 	<if test="keyword != '' and keyfield == 'mem_id'">
+					 		AND m.mem_id LIKE '%' || #{keyword} || '%'
+					 	</if>
+				 	</where>
+			  		ORDER BY (CASE WHEN (d.d_status_num != 8 AND d.d_status_num != 9) THEN 1 ELSE 2 END), 
+					  		  o.order_date DESC, d.d_status_num DESC)a)
+		<![CDATA[
+		WHERE rnum >= #{start} AND rnum <= #{end}
+		]]>	
+	</select>
+</mapper>

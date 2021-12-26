@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.order.dao.OrderMapper">  
+  	<select id="selectCancelOrder" parameterType="map" resultType="OrderListVO">
+select * from (select c.*,rownum rnum FROM
+(select s1.ORDER_NO, s2.MEM_NUM, s1.ORDER_DATE, s1.P_NO, s1.P_NAME, s1.P_IMAGE, s1.P_IMAGE_NAME, s2.P_CNT, s3.D_STATUS_NAME,s3.d_status_num,s2.order_pay
+ from (select a.ORDER_NO, a.ORDER_DATE, p.P_NAME, p.P_IMAGE, p.P_IMAGE_NAME, p.P_NO
+      from (select o.ORDER_NO, o.ORDER_DATE, d.P_NO, row_number() over (partition by o.ORDER_NO order by d.ORDER_D_NO) as od_r_no
+            from SORDER o join SORDER_DETAIL d on o.ORDER_NO = d.ORDER_NO) a
+               join PRODUCT p on a.P_NO = p.P_NO where od_r_no = 1) s1
+         join
+     (select o.ORDER_NO, max(o.MEM_NUM) as MEM_NUM, count(*)-1 as P_CNT, o.order_pay
+      from SORDER o join SORDER_DETAIL d on o.ORDER_NO = d.ORDER_NO group by o.ORDER_NO, o.order_pay) s2 on s1.ORDER_NO = s2.ORDER_NO
+         join (select d.ORDER_NO , ds.D_STATUS_NAME,ds.d_status_num,d.tracking_num  from DELIVERY d
+                        join DELIVERY_STATUS ds on d.D_STATUS_NUM = ds.D_STATUS_NUM and d.d_status_num In(0,7)) s3
+              on s2.ORDER_NO = s3.ORDER_NO and s2.mem_num = #{mem_num} order by s1.order_date desc)c) 
+              <![CDATA[
+				WHERE rnum >= #{start} AND rnum <= #{end}  
+			]]> 
+  	</select>
+  	
+  	<select id="selectCancelOrderCount" parameterType="integer" resultType="integer">
+  select count(*) 
+  from sorder s, member m, delivery d where m.mem_num=s.mem_num 
+  and s.order_no = d.order_no and d.d_status_num IN(0,7) 
+  AND m.mem_num = #{mem_num}
+  	</select>
+  	
+  	<select id="selectAllOrder" parameterType="integer" resultType="OrderListVO">
+  	select * from (select c.*,rownum rnum FROM
+(select s1.ORDER_NO, s2.MEM_NUM, s1.ORDER_DATE, s1.P_NO, s1.P_NAME, s1.P_IMAGE, s1.P_IMAGE_NAME, s2.P_CNT, s3.D_STATUS_NAME,s3.d_status_num,s2.order_pay,s3.tracking_num
+ from (select a.ORDER_NO, a.ORDER_DATE, p.P_NAME, p.P_IMAGE, p.P_IMAGE_NAME, p.P_NO
+      from (select o.ORDER_NO, o.ORDER_DATE, d.P_NO, row_number() over (partition by o.ORDER_NO order by d.ORDER_D_NO) as od_r_no
+            from SORDER o join SORDER_DETAIL d on o.ORDER_NO = d.ORDER_NO) a
+               join PRODUCT p on a.P_NO = p.P_NO where od_r_no = 1) s1
+         join
+     (select o.ORDER_NO, max(o.MEM_NUM) as MEM_NUM, count(*)-1 as P_CNT, o.order_pay
+      from SORDER o join SORDER_DETAIL d on o.ORDER_NO = d.ORDER_NO group by o.ORDER_NO, o.order_pay) s2 on s1.ORDER_NO = s2.ORDER_NO
+         join (select d.ORDER_NO , ds.D_STATUS_NAME,ds.d_status_num,d.tracking_num  from DELIVERY d
+                        join DELIVERY_STATUS ds on d.D_STATUS_NUM = ds.D_STATUS_NUM) s3
+              on s2.ORDER_NO = s3.ORDER_NO and s2.mem_num = #{mem_num} order by s1.order_date desc)c) 
+                 <![CDATA[
+				WHERE rnum >= #{start} AND rnum <= #{end}  
+			]]> 
+  	</select>
+  	
+	<select id="selectAllOrderCount" parameterType="integer" resultType="integer">
+  		select count(*) 
+  		from sorder s, member m, delivery d where m.mem_num=s.mem_num 
+  		and s.order_no = d.order_no
+ 		 AND m.mem_num = #{mem_num}
+  	</select>
+ 
+  	
+  	
+  	  <select id="selectRefundOrder" parameterType="integer" resultType="OrderListVO">
+  select * from (select c.*,rownum rnum FROM
+(select s1.ORDER_NO, s2.MEM_NUM, s1.ORDER_DATE, s1.P_NO, s1.P_NAME, s1.P_IMAGE, s1.P_IMAGE_NAME, s2.P_CNT, s3.D_STATUS_NAME,s3.d_status_num,s2.order_pay,s3.tracking_num
+ from (select a.ORDER_NO, a.ORDER_DATE, p.P_NAME, p.P_IMAGE, p.P_IMAGE_NAME, p.P_NO
+      from (select o.ORDER_NO, o.ORDER_DATE, d.P_NO, row_number() over (partition by o.ORDER_NO order by d.ORDER_D_NO) as od_r_no
+            from SORDER o join SORDER_DETAIL d on o.ORDER_NO = d.ORDER_NO) a
+               join PRODUCT p on a.P_NO = p.P_NO where od_r_no = 1) s1
+         join
+     (select o.ORDER_NO, max(o.MEM_NUM) as MEM_NUM, count(*)-1 as P_CNT, o.order_pay
+      from SORDER o join SORDER_DETAIL d on o.ORDER_NO = d.ORDER_NO group by o.ORDER_NO, o.order_pay) s2 on s1.ORDER_NO = s2.ORDER_NO
+         join (select d.ORDER_NO , ds.D_STATUS_NAME,ds.d_status_num,d.tracking_num  from DELIVERY d
+                        join DELIVERY_STATUS ds on d.D_STATUS_NUM = ds.D_STATUS_NUM and d.d_status_num In(3,5,8)) s3
+              on s2.ORDER_NO = s3.ORDER_NO and s2.mem_num = #{mem_num} order by s1.order_date desc)c) 
+              <![CDATA[
+				WHERE rnum >= #{start} AND rnum <= #{end}  
+			]]> 
+  	</select>
+  	
+  	  <select id="selectRefundOrderCount" parameterType="integer" resultType="integer">
+  		select count(*) 
+  		from sorder s, member m, delivery d where m.mem_num=s.mem_num 
+  		and s.order_no = d.order_no and d.d_status_num IN(3,5,8) 
+  		AND m.mem_num = #{mem_num}
+  	</select>
+  	
+  	 <select id="selectExchageOrder" parameterType="integer" resultType="OrderListVO">
+  	 select * from (select c.*,rownum rnum FROM
+(select s1.ORDER_NO, s2.MEM_NUM, s1.ORDER_DATE, s1.P_NO, s1.P_NAME, s1.P_IMAGE, s1.P_IMAGE_NAME, s2.P_CNT, s3.D_STATUS_NAME,s3.d_status_num,s2.order_pay,s3.tracking_num
+ from (select a.ORDER_NO, a.ORDER_DATE, p.P_NAME, p.P_IMAGE, p.P_IMAGE_NAME, p.P_NO
+      from (select o.ORDER_NO, o.ORDER_DATE, d.P_NO, row_number() over (partition by o.ORDER_NO order by d.ORDER_D_NO) as od_r_no
+            from SORDER o join SORDER_DETAIL d on o.ORDER_NO = d.ORDER_NO) a
+               join PRODUCT p on a.P_NO = p.P_NO where od_r_no = 1) s1
+         join
+     (select o.ORDER_NO, max(o.MEM_NUM) as MEM_NUM, count(*)-1 as P_CNT, o.order_pay
+      from SORDER o join SORDER_DETAIL d on o.ORDER_NO = d.ORDER_NO group by o.ORDER_NO, o.order_pay) s2 on s1.ORDER_NO = s2.ORDER_NO
+         join (select d.ORDER_NO , ds.D_STATUS_NAME,ds.d_status_num,d.tracking_num  from DELIVERY d
+                        join DELIVERY_STATUS ds on d.D_STATUS_NUM = ds.D_STATUS_NUM and d.d_status_num In(3,6,9)) s3
+              on s2.ORDER_NO = s3.ORDER_NO and s2.mem_num = #{mem_num} order by s1.order_date desc)c) 
+              <![CDATA[
+				WHERE rnum >= #{start} AND rnum <= #{end}  
+			]]> 
+  	</select>
+  	
+  	 <select id="selectExchageOrderCount" parameterType="integer" resultType="integer">
+  		select count(*) 
+  		from sorder s, member m, delivery d where m.mem_num=s.mem_num 
+  		and s.order_no = d.order_no and d.d_status_num IN(3,6,9) 
+  		AND m.mem_num = #{mem_num}
+  	</select>
+  	
+  	  	 <select id="selectConfirmOrder" parameterType="integer" resultType="OrderListVO">
+  	select * from (select c.*,rownum rnum FROM
+(select s1.ORDER_NO, s2.MEM_NUM, s1.ORDER_DATE, s1.P_NO, s1.P_NAME, s1.P_IMAGE, s1.P_IMAGE_NAME, s2.P_CNT, s3.D_STATUS_NAME,s3.d_status_num,s2.order_pay,s3.tracking_num
+ from (select a.ORDER_NO, a.ORDER_DATE, p.P_NAME, p.P_IMAGE, p.P_IMAGE_NAME, p.P_NO
+      from (select o.ORDER_NO, o.ORDER_DATE, d.P_NO, row_number() over (partition by o.ORDER_NO order by d.ORDER_D_NO) as od_r_no
+            from SORDER o join SORDER_DETAIL d on o.ORDER_NO = d.ORDER_NO) a
+               join PRODUCT p on a.P_NO = p.P_NO where od_r_no = 1) s1
+         join
+     (select o.ORDER_NO, max(o.MEM_NUM) as MEM_NUM, count(*)-1 as P_CNT, o.order_pay
+      from SORDER o join SORDER_DETAIL d on o.ORDER_NO = d.ORDER_NO group by o.ORDER_NO, o.order_pay) s2 on s1.ORDER_NO = s2.ORDER_NO
+         join (select d.ORDER_NO , ds.D_STATUS_NAME,ds.d_status_num,d.tracking_num  from DELIVERY d
+                        join DELIVERY_STATUS ds on d.D_STATUS_NUM = ds.D_STATUS_NUM and d.d_status_num In(3,4)) s3
+              on s2.ORDER_NO = s3.ORDER_NO and s2.mem_num = #{mem_num} order by s1.order_date desc)c) 
+              <![CDATA[
+				WHERE rnum >= #{start} AND rnum <= #{end}  
+			]]> 
+  	</select>
+  	
+  	 <select id="selectConfirmOrderCount" parameterType="integer" resultType="integer">
+  		select count(*) 
+  		from sorder s, member m, delivery d where m.mem_num=s.mem_num 
+  		and s.order_no = d.order_no and d.d_status_num IN(3,4) 
+  		AND m.mem_num = #{mem_num}
+  	</select>
+  	
+</mapper>

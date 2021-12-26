@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+
+.form-div{
+	width:100%;
+	height:auto;
+	margin: auto;
+	display: inline-block;
+}
+
+form{
+	margin-left:10px;
+	padding:10px;
+	width: 85%;
+	height: auto;
+	display: inline-block;
+	border: 1px solid #ebebeb;
+}
+
+.col-sm-7{
+	width:800px;
+}
+
+.order-current a{
+	color:#35c5f0;
+}
+
+.order-current a:hover{
+	text-decoration: none;
+}

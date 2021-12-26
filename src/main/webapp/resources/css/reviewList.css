@@ -1,0 +1,164 @@
+@charset "UTF-8";
+#categorySide{
+	margin-top:30px;
+	float:left;
+	width: 160px;
+	margin-right: 40px;
+}
+
+#showmenu{
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.menu ul{
+  margin: 0;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.menu{
+	border-top:1px solid #cfcfd0; 
+}
+
+.menu > ul > li{
+	height:30px;
+    text-align: left;
+  list-style: none;
+  margin-top:10px;
+  margin-bottom: 10px;
+
+}
+
+.order-a a{
+  text-decoration: none;
+  color:#8a8a8e;
+}
+
+.order-a a:hover{
+  color: #35c5f0;
+}
+
+.top_menu_info{
+	width:100%; 
+	height:35px; 
+	background: #f4f4f5;
+	border-bottom: 1px solid #ebebeb;
+	border-top:1px solid #ebebeb;
+}
+
+.top_menu_info > div {
+	width:1200px; 
+	line-height: 35px;  
+	margin:0 auto; 
+	font-size: 13px;
+}
+
+.list-container{
+	display: flex;
+	justify-content: space-between;
+	flex-flow:wrap;
+	align-items:flex-start; 
+	cursor: pointer;
+}
+
+.list-container-empty{
+	display: flex;
+	justify-content: space-between;
+	flex-flow:wrap;
+	align-items:flex-start; 
+
+}
+
+.top-small-menu{
+	float:right;
+	width:1000px;
+	height:100%;
+}
+
+.top-small-menu-title{
+	height:50px; 
+	line-height:50px; 
+	font-size:25px; 
+	font-weight: bold;
+}
+
+.order-table{
+	border : 1px solid #f4f4f5;
+}
+
+.order-table thead {
+	text-align: center;
+}
+
+.order-table tbody {
+	text-align: center;
+	height: 120px;
+}
+
+.order-table thead td, th{
+	font-size:14px;
+	padding:10px;
+	background: #f4f4f5;
+}
+
+.table-text{
+	color:#8a8a92;
+}
+
+.table-product{
+	padding-left: 15px;
+	text-align: left;
+}
+
+.table-product-name-img{
+	float: left; 
+	width: 100px;
+	cursor: pointer;
+}
+
+.table-product-name{
+	float: left;
+	width:340px;
+	padding-left: 10px;
+}
+
+.table-product-pay{
+	float: left;
+	width:340px; 
+	padding-left: 10px; 
+	font-weight: bold;
+}
+
+.order-state-text{
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.order-state-detail{
+	font-size: 14px;
+}
+
+.order-current a{
+	color:#35c5f0;
+}
+
+.order-current a:hover{
+	text-decoration: none;
+}
+
+.cancle-btn{
+	font-size:13px;
+}
+
+.exchange-btn{
+	font-size:13px;
+}
+
+.refund-btn{
+	font-size:13px;
+}
+
+.confirm-btn{
+	font-size:13px;
+}

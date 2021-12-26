@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+<mapper namespace="kr.spring.adminInfo.dao.AdminInfoMapper">  
+
+	<select id="adminInfo" parameterType="String" resultType="kr.spring.login.vo.LoginVO">
+			SELECT * FROM member m LEFT OUTER JOIN member_detail d ON m.mem_num=d.mem_num WHERE m.mem_id=#{mem_id}
+	</select>
+
+	<update id="updateInfoAction" parameterType="kr.spring.login.vo.LoginVO">
+		UPDATE member_detail SET mem_passwd=#{mem_passwd},
+								 mem_name=#{mem_name},
+								 mem_phone=#{mem_phone},
+								 mem_email=#{mem_email},
+								 mem_zipcode=#{mem_zipcode},
+								 mem_address1=#{mem_address1},
+								 mem_address2=#{mem_address2},
+								 mem_date=#{mem_date}
+					WHERE mem_num=#{mem_num}
+	</update>
+	
+	<update id="updateInfoPasswdAction" parameterType="kr.spring.login.vo.LoginVO">
+		UPDATE member_detail SET mem_passwd=#{mem_passwd}
+						WHERE mem_num = #{mem_num}
+	</update>
+	
+	
+	
+</mapper>
+
+
+
+
+
+
+
