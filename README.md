@@ -7,7 +7,7 @@
 ## 구현 내용
 
 ```
-* OS
+#### OS
   * Microsoft Windows 10
   
 * DBMS
