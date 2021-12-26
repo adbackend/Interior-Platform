@@ -8,8 +8,8 @@
 
 ### 개발환경
 * OS - Microsoft Windows 10
-* DBMS - Oracle Database 11g
 * TOOLS - JDK 1.8
+* DBMS - Oracle Database 11g
 * SERVER - Apache Tomcat v9.0
 * LANGUAGE - Java / HTML / CSS / Javascript / JSP /JQuery
 
