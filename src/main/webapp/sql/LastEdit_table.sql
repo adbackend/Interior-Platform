@@ -164,6 +164,7 @@ CREATE TABLE QNA
     board_content    CLOB             NOT NULL, 
     board_date       DATE             NOT NULL, 
     mem_num          NUMBER           NOT NULL, 
+    board_parent     NUMBER,
     board_kind       NUMBER(1,0)      NULL, 
     p_no             NUMBER           NULL, 
     CONSTRAINT qna_pk PRIMARY KEY (board_no),
