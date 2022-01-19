@@ -23,12 +23,6 @@ function noBack() {
 	window.history.forward();
 }
 
-// if (self.name != 'reload') {
-// alert('로그아웃 되었습니다.');
-//     self.name = 'reload';
-//     self.location.reload(true);
-// }
-// else self.name = ''; 
 
 </script>
 
