@@ -29,7 +29,7 @@
 [매출관리] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminRevenue)<br>
 [장바구니] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/cart/controller)<br>
 [상품페이지] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/product)<br>
-[주문](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/order)
+[주문] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/order)
 
 
 
