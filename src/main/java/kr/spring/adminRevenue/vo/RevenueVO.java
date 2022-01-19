@@ -2,12 +2,6 @@ package kr.spring.adminRevenue.vo;
 
 import java.sql.Date;
 
-/**
-  * @FileName : RevenueVO.java
-  * @Date : 2021. 10. 15. 
-  * @Author : 최유정
-  * @Description : 매출관리 db
-  */
 public class RevenueVO {
 
 	private Date order_date; // 주문날짜
