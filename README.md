@@ -16,11 +16,11 @@
 <br>
 
 ### [회원기능] 
-1.로그인/회원가입<br>
-2.상품페이지
-3.장바구니
-4.주문
-5.qan
+1.[로그인](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/login), [회원가입](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/member)<br>
+2.상품페이지<br>
+3.장바구니<br>
+4.주문<br>
+5.qan<br>
 
 ### [관리자 관리]
 1.마이페이지
