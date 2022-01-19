@@ -46,10 +46,7 @@
 # [관리자- 회원관리](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminMember)<br>
 ![image](https://user-images.githubusercontent.com/94349690/150128146-0a3575f7-1bc1-48d2-b9a8-33990d92c4c7.png) <br>
 
-[매출관리] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminRevenue)<br>
-[장바구니] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/cart/controller)<br>
 
-[주문] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/order)
 
 
 
