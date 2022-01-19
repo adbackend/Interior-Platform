@@ -12,13 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import kr.spring.adminInfo.service.AdminInfoService;
 import kr.spring.login.vo.LoginVO;
 
-/**
-  * @FileName : AdminInfoController.java
-  * @Date : 2021. 10. 11. 
-  * @Author : 최유정
-  * @Description : 관리자 마이페이지
-  */
-
 @Controller
 public class AdminInfoController {
 	
