@@ -22,7 +22,7 @@
 
 [로그인] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/login) <br>
 [마이페이지 - 관리자] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminInfo)<br>
-[로그인] (링크)<br>
+[매출관리] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminRevenue)<br>
 [로그인] (링크)
 [로그인] (링크)
 [로그인] (링크)
