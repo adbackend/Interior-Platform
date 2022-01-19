@@ -19,15 +19,15 @@
 1.[로그인](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/login), [회원가입](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/member) 
 2.[상품페이지](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/product)
 3.[장바구니](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/cart/controller) 
-4.[주문](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/order)
+4.[주문관리](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/order)
 5.[문의](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/qna)
 
 ### [관리자 관리]
 1.[마이페이지](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminInfo)
 2.[회원관리](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminMember)
-3.카테고리관리
-4.상품관리
-5.주문관리
+3.[카테고리](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/category_top)
+4.[상품관리](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/product)
+5.[주문관리](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/order)
 6.[매출관리](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminRevenue)
 
 <br><br>
