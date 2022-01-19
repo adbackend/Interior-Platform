@@ -13,6 +13,10 @@
 * SERVER - Apache Tomcat v9.0
 * LANGUAGE - Java / HTML / CSS / Javascript / JSP /JQuery
 
+<br>
+
+## [회원기능] - 로그인/회원가입
+
 <br><br>
 
  # [상품페이지](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/product):pushpin:<br>
