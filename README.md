@@ -20,7 +20,7 @@
 2.[상품페이지](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/product)
 3.[장바구니](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/cart/controller) 
 4.[주문](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/order)
-5.[](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/qna)
+5.[문의](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/qna)
 
 ### [관리자 관리]
 1.[마이페이지](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminInfo)
