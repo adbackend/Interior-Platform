@@ -23,10 +23,10 @@
 # [로그인](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/login), [회원가입](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/member)<br>
 ![image](https://user-images.githubusercontent.com/94349690/150127873-5f5eb3c8-3f09-4050-855d-0906cba11f2f.png)<br>
 
-# [관리자-마이페이지] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminInfo)<br>
+# [관리자-마이페이지](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminInfo)<br>
 ![image](https://user-images.githubusercontent.com/94349690/150128102-8ab4e915-55c8-49fc-9c15-133df41f5780.png)
 
-# [관리자- 회원관리] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminMember)<br>
+# [관리자- 회원관리](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminMember)<br>
 ![image](https://user-images.githubusercontent.com/94349690/150128146-0a3575f7-1bc1-48d2-b9a8-33990d92c4c7.png) <br>
 
 [매출관리] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminRevenue)<br>
