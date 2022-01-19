@@ -108,10 +108,6 @@ ul{
 			<li class="btn"><button  class="a" type="submit">로그인</button></li>
 		</ul>
 		
-<!-- 		<ul class="btn"> -->
-<!-- 			<li>아이디를 잊으셨나요? <a href="findIdForm.do">아이디 찾기</a></li>		 -->
-<!-- 			<li>비밀번호를 잊으셨나요? <a href="findPasswdForm.do">비밀번호 찾기</a></li>		 -->
-<!-- 		</ul> -->
 		</div>
 		
 	</fieldset>
