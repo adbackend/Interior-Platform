@@ -2,12 +2,6 @@ package kr.spring.login.vo;
 
 import java.sql.Date;
 
-/**
-  * @FileName : LoginVO.java
-  * @Date : 2021. 10. 9. 
-  * @Author : 최유정
-  * @Description : member테이블+member_detail테이블
-  */
 public class LoginVO {
 	
 	private int mem_num; //시퀀스
