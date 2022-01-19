@@ -14,10 +14,6 @@
 	margin:0 auto;
 	padding: 85px 0;
 }
-
-/* table tr:last-child{ */
-/* 	display:none; */
-/* } */
 </style>
 <script type="text/javascript">
 	function check_pw(){
@@ -50,10 +46,6 @@
       <td>${vo.mem_id}</td>
     </tr>
     
-<!--     <tr> -->
-<!--       <th scope="row">비밀번호</th> -->
-<%--       <td><input type="text" name="mem_name" id="mem_name" value="${vo.mem_name}"/></td> --%>
-<!--     </tr> -->
 
     <tr>
       <th scope="row">비밀번호</th>
