@@ -21,6 +21,7 @@
 ![image](https://user-images.githubusercontent.com/94349690/147401611-35171fe1-67d3-4ef2-9cdf-8f663b8e6951.png)
 
 [로그인] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/login) <br>
+[회원가입] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/member)
 [마이페이지 - 관리자] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminInfo)<br>
 [매출관리] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminRevenue)<br>
 [로그인] (링크)
