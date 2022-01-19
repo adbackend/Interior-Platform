@@ -32,7 +32,7 @@
 
 <br><br>
 
- ## [상품페이지](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/product)<br>
+ ## [상품페이지](https://github.com/adbackend/Interior-Platform/tree/master/src/main/webapp/WEB-INF/views/shop)<br>
 ![image](https://user-images.githubusercontent.com/94349690/147401592-f5c00fa9-dfc6-4131-b466-60b05d88065b.png)
 ![image](https://user-images.githubusercontent.com/94349690/147401611-35171fe1-67d3-4ef2-9cdf-8f663b8e6951.png)
 <br>
@@ -40,14 +40,14 @@
 ## [로그인](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/login), [회원가입](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/member)<br>
 ![image](https://user-images.githubusercontent.com/94349690/150127873-5f5eb3c8-3f09-4050-855d-0906cba11f2f.png)<br>
 
-## [장바구니](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/cart)
+## [장바구니](https://github.com/adbackend/Interior-Platform/blob/master/src/main/webapp/WEB-INF/views/shop/cart.jsp)
 ![image](https://user-images.githubusercontent.com/94349690/150133442-5bcd8e4b-d1cd-42f9-9980-9aadd3ff36b5.png)
 
 
-## [관리자-마이페이지](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminInfo)<br>
+## [관리자-마이페이지](https://github.com/adbackend/Interior-Platform/tree/master/src/main/webapp/WEB-INF/views/adminInfo)<br>
 ![image](https://user-images.githubusercontent.com/94349690/150128102-8ab4e915-55c8-49fc-9c15-133df41f5780.png)
 
-## [관리자- 회원관리](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminMember)<br>
+## [관리자- 회원관리](https://github.com/adbackend/Interior-Platform/tree/master/src/main/webapp/WEB-INF/views/adminMember)<br>
 ![image](https://user-images.githubusercontent.com/94349690/150128146-0a3575f7-1bc1-48d2-b9a8-33990d92c4c7.png) <br>
 
 
