@@ -37,7 +37,7 @@
 ![image](https://user-images.githubusercontent.com/94349690/147401611-35171fe1-67d3-4ef2-9cdf-8f663b8e6951.png)
 <br>
 
-## [로그인](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/login), [회원가입](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/member)<br>
+## [로그인](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/login), [회원가입](https://github.com/adbackend/Interior-Platform/blob/master/src/main/webapp/WEB-INF/views/member/memberRegister.jsp)<br>
 ![image](https://user-images.githubusercontent.com/94349690/150127873-5f5eb3c8-3f09-4050-855d-0906cba11f2f.png)<br>
 
 ## [장바구니](https://github.com/adbackend/Interior-Platform/blob/master/src/main/webapp/WEB-INF/views/shop/cart.jsp)
