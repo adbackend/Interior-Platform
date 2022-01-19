@@ -17,7 +17,7 @@
 
 ### [회원기능] 
 1.[로그인](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/login), [회원가입](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/member) 
-2.[상품페이지](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/product)  
+2.[상품페이지](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/product)
 3.[장바구니](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/cart/controller)  
 [주문](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/order)
 5.qan
