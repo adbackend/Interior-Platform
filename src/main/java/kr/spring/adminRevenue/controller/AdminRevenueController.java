@@ -12,13 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import kr.spring.adminRevenue.service.AdminRevenueService;
 
-/**
-  * @FileName : AdminRevenueController.java
-  * @Date : 2021. 10. 12. 
-  * @Author : 최유정
-  * @Description : goods상품별 매출관리 Controller
-  */
-
 @Controller
 public class AdminRevenueController {
 
