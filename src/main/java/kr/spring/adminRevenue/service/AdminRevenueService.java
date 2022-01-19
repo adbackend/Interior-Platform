@@ -6,12 +6,6 @@ import java.util.Map;
 
 import kr.spring.adminRevenue.vo.RevenueVO;
 
-/**
-  * @FileName : AdminRevenueService.java
-  * @Date : 2021. 10. 14. 
-  * @Author : 최유정
-  * @Description : 
-  */
 public interface AdminRevenueService {
 	
 	public List<RevenueVO> selectList(Map<String,String> map); //매출관리
