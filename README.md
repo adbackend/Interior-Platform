@@ -23,11 +23,11 @@
 [로그인] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/login) <br>
 [회원가입] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/member)<br>
 
-[마이페이지 - 관리자] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminInfo)<br>
+[관리자-] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminInfo)<br>
 [매출관리] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminRevenue)<br>
 [장바구니] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/cart/controller)<br>
 [상품페이지] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/product)<br>
-[로그인] (링크)
+[관리자- 회원관리] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminMember)
 
 
 
