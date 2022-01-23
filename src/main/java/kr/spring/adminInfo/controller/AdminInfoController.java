@@ -43,7 +43,7 @@ public class AdminInfoController {
 			return "adminInfoForm"; //타일즈 식별자
 			
 		}else {
-			System.out.println("그럼 여기로 와....?");
+			
 			return "loginForm"; //타일즈 식별자
 		}
 	}
@@ -120,7 +120,6 @@ public class AdminInfoController {
 		if(mem_num!=null) { //로그인 됐을때
 			adminInfoService.updateInfoPasswdAction(loginVO);
 			
-//			return "redirect:/admin/adminInfoForm.do"; //수정 성공
 			return "/adminInfo/Updatesuccess"; //수정 성공
 		}
 		return "adminInfoUpdateForm"; //수정실패
