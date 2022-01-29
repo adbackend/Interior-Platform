@@ -18,10 +18,6 @@ public class AdminRevenueController {
 	@Autowired
 	private AdminRevenueService adminRevenueService;
 
-	@RequestMapping("/admin/goodsRevenue.do")
-	public String goodsRevenue() {
-		return "goodsRevenue";
-	}
 	
 	@RequestMapping("/admin/termRevenue.do")
 	public ModelAndView termChartRevenue() {
