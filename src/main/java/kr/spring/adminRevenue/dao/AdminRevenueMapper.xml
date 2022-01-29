@@ -19,34 +19,7 @@
             ON p.c_top_no = ct.c_top_no
             GROUP BY p.p_name ORDER BY SUM(s.order_pay) DESC;
 	</select>
-	
-<!-- 	<select id="getGoodsRevenue" parameterType="java.lang.String" resultType="java.util.HashMap"> -->
-<!-- 		SELECT  -->
-<!-- 		    RANK() OVER(ORDER BY TOTAL_ORDER_PRICE DESC) AS RANK,  -->
-<!-- 		    A.*  -->
-<!-- 		FROM  -->
-<!-- 		( -->
-<!-- 			SELECT -->
-<!-- 			    C.C_TOP_NAME AS CATEGORY_NAME, -->
-<!-- 			    B.P_NO AS PRODUCT_CODE, -->
-<!-- 			    B.P_NAME AS PRODUCT_NAME, -->
-<!-- 			    B.P_PRICE AS PRODUCT_PRICE, -->
-<!-- 			    COUNT(B.P_NO) AS TOTAL_ORDER_COUNT, -->
-<!-- 			    SUM(A.ORDER_D_PRICE * A.ORDER_D_AMOUNT) AS TOTAL_ORDER_PRICE -->
-<!-- 			FROM SORDER E -->
-<!-- 			INNER JOIN SORDER_DETAIL A ON E.ORDER_NO = A.ORDER_NO -->
-<!-- 			INNER JOIN PRODUCT B ON A.P_NO = B.P_NO -->
-<!-- 			INNER JOIN CATEGORY_TOP C ON B.C_TOP_NO = C.C_TOP_NO -->
-<!-- 			INNER JOIN CATEGORY_SUB D ON C.C_TOP_NO = D.C_TOP_NO AND B.C_SUB_NO = D.C_SUB_NO -->
-<!-- 			WHERE E.ORDER_DATE BETWEEN TO_DATE(#{startDate}, 'YYYY-MM-DD') AND TO_DATE(#{endDate}, 'YYYY-MM-DD') -->
-<!-- 			GROUP BY C.C_TOP_NAME, B.P_NO, B.P_NAME, B.P_PRICE -->
-<!-- 		) A -->
-<!-- 	</select> -->
-	
-	<!-- ########################################################################################################## -->
-	<!-- ########################################################################################################## -->
-	<!-- ########################################################################################################## -->
-	
+
 	<select id="getGoodsRevenue" parameterType="java.lang.String" resultType="java.util.HashMap">
 		SELECT 
 		    RANK() OVER(ORDER BY TOTAL_ORDER_PRICE DESC) AS RANK, 
