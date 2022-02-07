@@ -49,7 +49,11 @@
 ## [관리자- 회원관리](https://github.com/adbackend/Interior-Platform/tree/master/src/main/webapp/WEB-INF/views/adminMember)<br>
 ![image](https://user-images.githubusercontent.com/94349690/150128146-0a3575f7-1bc1-48d2-b9a8-33990d92c4c7.png) <br>
 
+## [관리자- 주문관리] ()<br>
+![image](https://user-images.githubusercontent.com/94349690/152779920-2ae5c831-7232-4b2b-870c-57765351af23.png)
 
+## [관리자 - 매출관리]
+![image](https://user-images.githubusercontent.com/94349690/152779992-e3387382-8cf8-469c-b486-26407fe4a8ba.png)
 
 
 
