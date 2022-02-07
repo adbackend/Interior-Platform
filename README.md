@@ -52,7 +52,7 @@
 ## [관리자- 주문관리] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/order)<br>
 ![image](https://user-images.githubusercontent.com/94349690/152779920-2ae5c831-7232-4b2b-870c-57765351af23.png)
 
-## [관리자 - 매출관리]
+## [관리자 - 매출관리] (https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/adminRevenue)<br>
 ![image](https://user-images.githubusercontent.com/94349690/152779992-e3387382-8cf8-469c-b486-26407fe4a8ba.png)
 
 
