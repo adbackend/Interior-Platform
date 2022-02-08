@@ -18,9 +18,9 @@
 	
 	var app = {
 		drawSheetAndChart: function() {
-			let param = {};
-			let startDate = document.getElementById('startDate');
-			let endDate = document.getElementById('endDate');
+			var param = {};
+			var startDate = document.getElementById('startDate');
+			var endDate = document.getElementById('endDate');
 			param['startDate'] = startDate.value;
 			param['endDate'] = endDate.value;
 			
@@ -39,8 +39,8 @@
 				}
 			});
 		}, dateSubtractAndSearch: function(num, type) {
-			let startDate = document.getElementById('startDate').valueAsDate;
-			let endDate = document.getElementById('endDate').valueAsDate;
+			var startDate = document.getElementById('startDate').valueAsDate;
+			var endDate = document.getElementById('endDate').valueAsDate;
 			
 			if (type === "DATE") {
 				startDate.setDate(endDate.getDate() - num);
@@ -72,10 +72,10 @@
 		data.addColumn('string', '상품명');
 		data.addColumn('number', '판매수량');
 		   
-		let goodsRevenueChartDatas = [];
+		var goodsRevenueChartDatas = [];
 		   
-		for (let goodsRevenue of goodsRevenues) {
-			let goodsRevenueChartData = [goodsRevenue['PRODUCT_NAME'], goodsRevenue['TOTAL_ORDER_COUNT']];
+		for (var goodsRevenue of goodsRevenues) {
+			var goodsRevenueChartData = [goodsRevenue['PRODUCT_NAME'], goodsRevenue['TOTAL_ORDER_COUNT']];
 			goodsRevenueChartDatas.push(goodsRevenueChartData);
 		}
    
@@ -95,8 +95,8 @@
 		if (goodsRevenues.length == 0) {
 			document.getElementById('GoodsRevenueSheetBody').innerHTML += "<tr><td colspan=7>매출 정보가 없습니다.</td></tr>";
 		} else {
-			for (let goodsRevenue of goodsRevenues) {
-				let rowHtml = "<tr>" +
+			for (var goodsRevenue of goodsRevenues) {
+				var rowHtml = "<tr>" +
 								"<td>" + goodsRevenue['RANK'] + "</td>" + 
 								"<td>" + goodsRevenue['CATEGORY_NAME'] + "</td>" + 
 								"<td>" + goodsRevenue['PRODUCT_CODE'] + "</td>" + 
