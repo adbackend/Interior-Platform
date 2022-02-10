@@ -5,7 +5,7 @@
 
 ## [sql테이블](https://github.com/adbackend/Interior-Platform/blob/master/src/main/webapp/sql/LastEdit_table.sql)<br/>
 
-## 인원: 5
+## 개발인원: 5인
 ### 개발환경
 * OS - Microsoft Windows 10
 * TOOLS - JDK 1.8
