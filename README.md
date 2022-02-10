@@ -55,6 +55,10 @@
 ## [관리자- 회원관리](https://github.com/adbackend/Interior-Platform/tree/master/src/main/webapp/WEB-INF/views/adminMember)<br>
 ![image](https://user-images.githubusercontent.com/94349690/150128146-0a3575f7-1bc1-48d2-b9a8-33990d92c4c7.png) <br>
 
+## [관리자 - ](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/product)<br>
+![image](https://user-images.githubusercontent.com/94349690/153359587-29c632d6-9d69-474b-82d4-efe15f9b4c5c.png)
+
+
 ## [관리자- 주문관리](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/order)<br>
 ![image](https://user-images.githubusercontent.com/94349690/152779920-2ae5c831-7232-4b2b-870c-57765351af23.png)
 
