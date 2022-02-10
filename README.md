@@ -45,6 +45,9 @@
 ## [장바구니](https://github.com/adbackend/Interior-Platform/blob/master/src/main/webapp/WEB-INF/views/shop/cart.jsp)
 ![image](https://user-images.githubusercontent.com/94349690/150133442-5bcd8e4b-d1cd-42f9-9980-9aadd3ff36b5.png)
 
+## [주문](https://github.com/adbackend/Interior-Platform/tree/master/src/main/java/kr/spring/order)
+![image](https://user-images.githubusercontent.com/94349690/153359409-95aedc8e-2271-459b-86fa-70bb3d074b68.png)
+
 
 ## [관리자-마이페이지](https://github.com/adbackend/Interior-Platform/tree/master/src/main/webapp/WEB-INF/views/adminInfo)<br>
 ![image](https://user-images.githubusercontent.com/94349690/150128102-8ab4e915-55c8-49fc-9c15-133df41f5780.png)
